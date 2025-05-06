@@ -1,114 +1,77 @@
-{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "id": "436a7047-468f-4093-8980-6f4792d86166",
-   "metadata": {},
-   "source": [
-    "# 🚗 Projekt: Fuhrparkverwaltung\n",
-    "\n",
-    "## 🧾 Kontext\n",
-    "Ein Unternehmen verwaltet eine Fahrzeugflotte (Autos, Transporter). Fahrzeuge gehören zu bestimmten Abteilungen, können bestimmten Fahrern zugewiesen sein und müssen regelmäßig gewartet werden.\n",
-    "\n",
-    "Du arbeitest im Team und nutzt **Git**, **JUnit** und **Maven**.\n",
-    "---\n",
-    "\n",
-    "## ✅ Git-Workflow\n",
-    "- Erstelle zu Begin einen dev Branch\n",
-    "- Erstelle anschließend pro **Klasse** einen **eigenen Branch**\n",
-    "- Merge diesen in `dev`, sobald diese implementiert wurde\n",
-    "- Nutze sinnvolle Commit-Messages\n",
-    "- Arbeite so, wie wenn mehrere Entwickler am Projekt arbeiten.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 2. 🧱 Modellierung\n",
-    "\n",
-    "Die Beziehung zwischen den Klassen ist wie folgt:\n",
-    "\n",
-    "    Eine Abteilung hat mehrere Fahrer.\n",
-    "\n",
-    "    Ein Fahrer gehört zu genau einer Abteilung.\n",
-    "\n",
-    "    Ein Fahrer kann mehrere Fahrzeuge besitzen.\n",
-    "\n",
-    "    Ein Fahrzeug kann einem Fahrer zugewiesen oder von ihm entfernt werden.\n",
-    "---\n",
-    "\n",
-    "## 🧱 Klassen (ohne Beziehungen)\n",
-    "\n",
-    "### 🚙 Fahrzeug\n",
-    "\n",
-    "- `String kennzeichen`\n",
-    "- `String typ`\n",
-    "- `int baujahr`\n",
-    "- `Fahrer fahrer` \n",
-    "\n",
-    "---\n",
-    "\n",
-    "### 👤 Fahrer\n",
-    "\n",
-    "- `String name`\n",
-    "- `String fuehrerscheinklasse`\n",
-    "- `List<Fahrzeug> fahrzeuge`\n",
-    "\n",
-    "---\n",
-    "\n",
-    "### 🏢 Abteilung\n",
-    "\n",
-    "- `String name`\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 🛠️ Methoden in `FuhrparkService`\n",
-    "\n",
-    "- `void fahrzeugZuweisen(Fahrer f, Fahrzeug v)`\n",
-    "- `void fahrzeugEntfernenVonFahrer(Fahrzeug v)`\n",
-    "- `List<Fahrzeug> findeFahrzeugeEinerAbteilung(String abteilungsname)`\n",
-    "\n",
-    "\n",
-    "## 🧪 Tests mit JUnit 5\n",
-    "\n",
-    "- Schreibe zu jeder Methode mindestens **einen Testfall**\n",
-    "- Nutze `@BeforeEach` zum Vorbereiten von Objekten\n",
-    "- Testdatenbeispiele:\n",
-    "  - Fahrer: `\"Max\"`, `\"Lisa\"`\n",
-    "  - Fahrzeug: `\"ABC-123\"`, `\"VW Golf\"`\n",
-    "  - Abteilung: `\"Logistik\"`\n",
-    "\n",
-    "---\n",
-    "## Release\n",
-    "Merge den dec branach anschließend in main\n"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "7550ae70-0c79-4990-bc88-4ad94024d26d",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.12.4"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+# 🚗 Projekt: Fuhrparkverwaltung
+
+## 🧾 Kontext
+Ein Unternehmen verwaltet eine Fahrzeugflotte (Autos, Transporter). Fahrzeuge gehören zu bestimmten Abteilungen, können bestimmten Fahrern zugewiesen sein und müssen regelmäßig gewartet werden.
+
+Du arbeitest im Team und nutzt **Git**, **JUnit** und **Maven**.
+---
+
+## ✅ Git-Workflow
+- Erstelle zu Begin einen dev Branch
+- Erstelle anschließend pro **Klasse** einen **eigenen Branch**
+- Merge diesen in `dev`, sobald diese implementiert wurde
+- Nutze sinnvolle Commit-Messages
+- Arbeite so, wie wenn mehrere Entwickler am Projekt arbeiten.
+
+---
+
+## 2. 🧱 Modellierung
+
+Die Beziehung zwischen den Klassen ist wie folgt:
+
+    Eine Abteilung hat mehrere Fahrer.
+
+    Ein Fahrer gehört zu genau einer Abteilung.
+
+    Ein Fahrer kann mehrere Fahrzeuge besitzen.
+
+    Ein Fahrzeug kann einem Fahrer zugewiesen oder von ihm entfernt werden.
+---
+
+## 🧱 Klassen (ohne Beziehungen)
+
+### 🚙 Fahrzeug
+
+- `String kennzeichen`
+- `String typ`
+- `int baujahr`
+- `Fahrer fahrer` 
+
+---
+
+### 👤 Fahrer
+
+- `String name`
+- `String fuehrerscheinklasse`
+- `List<Fahrzeug> fahrzeuge`
+
+---
+
+### 🏢 Abteilung
+
+- `String name`
+
+---
+
+## 🛠️ Methoden in `FuhrparkService`
+
+- `void fahrzeugZuweisen(Fahrer f, Fahrzeug v)`
+- `void fahrzeugEntfernenVonFahrer(Fahrzeug v)`
+- `List<Fahrzeug> findeFahrzeugeEinerAbteilung(String abteilungsname)`
+
+
+## 🧪 Tests mit JUnit 5
+
+- Schreibe zu jeder Methode mindestens **einen Testfall**
+- Nutze `@BeforeEach` zum Vorbereiten von Objekten
+- Testdatenbeispiele:
+  - Fahrer: `"Max"`, `"Lisa"`
+  - Fahrzeug: `"ABC-123"`, `"VW Golf"`
+  - Abteilung: `"Logistik"`
+
+---
+## Release
+Merge den dec branach anschließend in main
+
+## DokumentTion
+Erstelle anschließend ein UML-Diagramm deiner Lösung
