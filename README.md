@@ -60,7 +60,7 @@ Die Beziehung zwischen den Klassen ist wie folgt:
 - `List<Fahrzeug> findeFahrzeugeEinerAbteilung(String abteilungsname)`
 
 
-## 🧪 Tests mit JUnit 5
+## 🧪 Tests mit JUnit 4
 
 - Schreibe zu jeder Methode mindestens **einen Testfall**
 - Nutze `@BeforeEach` zum Vorbereiten von Objekten
