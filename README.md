@@ -74,4 +74,5 @@ Die Beziehung zwischen den Klassen ist wie folgt:
 Merge den dec branach anschließend in main
 
 ## DokumentTion
-Erstelle anschließend ein UML-Diagramm deiner Lösung
+- Ergänze die JavaDoc bei allen Methoden
+- Erstelle anschließend ein UML-Diagramm deiner Lösung
