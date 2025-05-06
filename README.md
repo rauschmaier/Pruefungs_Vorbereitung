@@ -25,6 +25,8 @@ Die Beziehung zwischen den Klassen ist wie folgt:
 
     Ein Fahrer kann mehrere Fahrzeuge besitzen.
 
+    Ein Fahrzeug kann genau einen Fahrer haben.
+
     Ein Fahrzeug kann einem Fahrer zugewiesen oder von ihm entfernt werden.
 ---
 
@@ -43,8 +45,6 @@ Die Beziehung zwischen den Klassen ist wie folgt:
 
 - `String name`
 - `String fuehrerscheinklasse`
-- `List<Fahrzeug> fahrzeuge`
-
 ---
 
 ### 🏢 Abteilung
